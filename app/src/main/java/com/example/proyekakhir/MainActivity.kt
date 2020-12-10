@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     val nameArray: Array<String> = resources.getStringArray(R.array.movie_title)
     val synopsisArray: Array<String> = resources.getStringArray(R.array.movie_synopsis)
     val dateArray: Array<String> = resources.getStringArray(R.array.movie_release_date)
+    val movieRepo = MovieRepository(ratingArray, posterArray, nameArray, synopsisArray, dateArray)
 
     lateinit var tv_hello: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
