@@ -9,6 +9,8 @@
     <string name="movie_rating">Movie Rating</string>
     <string name="movie_synopsis">Movie Synopsis</string>
 
+
+
     <array name="movie_poster">
         <item>@drawable/poster_aquaman</item>
         <item>@drawable/poster_avengerinfinity</item>
