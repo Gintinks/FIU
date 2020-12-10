@@ -11,6 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+    val ratingArray: Array<String> = resources.getStringArray(R.array.movie_rating)
+    val posterArray: Array<String> = resources.getStringArray(R.array.movie_poster)
+    val nameArray: Array<String> = resources.getStringArray(R.array.movie_title)
+    val synopsisArray: Array<String> = resources.getStringArray(R.array.movie_synopsis)
+    val dateArray: Array<String> = resources.getStringArray(R.array.movie_release_date)
+    val movieRepo = MovieRepository(ratingArray, posterArray, nameArray, synopsisArray, dateArray)
+
     lateinit var tv_hello: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
