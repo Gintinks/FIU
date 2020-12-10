@@ -20,8 +20,12 @@
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_release_date"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:text="@string/movie_rating" />
 
@@ -32,10 +36,12 @@
         android:layout_marginTop="8dp"
         android:lineSpacingMultiplier="1"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:text="@string/movie_synopsis" />
 
@@ -46,8 +52,11 @@
         android:layout_marginTop="4dp"
         android:lineSpacingMultiplier="1"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints"
         tools:text="@string/movie_release_date" />
 
@@ -58,8 +67,12 @@
         android:layout_marginTop="4dp"
         android:textColor="#070707"
         android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="@string/movie_title" />
 
     <FrameLayout
@@ -82,14 +95,15 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginRight="47dp"
-        android:text="Review"
+        android:layout_width="75dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/review"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toEndOf="@+id/tv_rating"
-        app:layout_constraintTop_toBottomOf="@id/tv_release_date" />
+        app:layout_constraintTop_toBottomOf="@id/tv_release_date"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
