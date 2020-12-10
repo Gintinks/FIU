@@ -8,7 +8,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var tv_hello: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         Log.i("MainActivity", "onStart()")
     }
     override fun onStart(){
@@ -21,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume(){
         super.onResume()
+        setContentView(R.layout.activity_main)
+
         Log.i("MainActivity", "onResume()")
     }
     override fun onStop() {
