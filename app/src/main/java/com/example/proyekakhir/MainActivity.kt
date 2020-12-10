@@ -13,9 +13,14 @@ class MainActivity : AppCompatActivity() {
     val movieRepo = MovieRepository(ratingArray, posterArray, nameArray, synopsisArray, dateArray)
 
     lateinit var tv_hello: TextView
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("MainActivity", "onStart()")
+        setContentView(R.layout.activity_movie_list)
     }
     override fun onStart(){
         super.onStart()
