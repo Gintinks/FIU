@@ -10,8 +10,9 @@ class MovieRepository(
 
     private val listOfTodos = mutableListOf<movie2>()
     init {
-        for (rating in ratingArray) {
-            // body of loop
+        for (i in 0..ratingArray.size-1) {
+            // body of loop\
+            ratingArray.get(i)
         }
         listOfTodos.add(movie2(1, "","PPP-A"))
     }
