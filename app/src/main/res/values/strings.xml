@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ProyekAkhir</string>
 
-    <string name="app_name">Movie Review</string>
+    <string name="app_name2">Movie Review</string>
     <string name="header_movie_list">Movie List</string>
     <string name="header_movie_detail">Movie Detail</string>
     <string name="movie_title">Movie Title</string>
