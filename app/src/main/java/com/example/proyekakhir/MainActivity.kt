@@ -31,5 +31,5 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("MainActivity", "onDestroy()")
     }
-    //isjs
+    //isjssadas
 }
