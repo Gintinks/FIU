@@ -12,9 +12,9 @@ class MovieRepository(
     init {
         for (i in 0..ratingArray.size-1) {
             // body of loop\
-            ratingArray.get(i)
+            listOfTodos.add(movie2(i, nameArray.get(i),dateArray.get(i),synopsisArray.get(i) ,
+                Integer.parseInt(ratingArray.get(i)), posterArray.get(i)))
         }
-        listOfTodos.add(movie2(1, "","PPP-A"))
     }
 
     fun addTodos(newMovie: movie2) {
