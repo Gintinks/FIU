@@ -1,8 +1,12 @@
 package com.example.proyekakhir
 
+import android.media.Image
+import android.media.ImageReader
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
@@ -20,9 +24,11 @@ class TodoAdapter(var todos: LiveData<List<movie2>>) :
             val nama_movie = findViewById<TextView>(R.id.tv_title)
             val date = findViewById<TextView>(R.id.tv_release_date)
             val synopsis = findViewById<TextView>(R.id.tv_synopsis)
+            val poster = findViewById<ImageView>(R.id.iv_poster)
             nama_movie.text = todos.value?.get(position)?.nama_movie ?: ""
             date.text = todos.value?.get(position)?.release_date ?: ""
             synopsis.text = todos.value?.get(position)?.sinopsis_movie ?: ""
+            poster.setImageDrawable(todos.value?.get(position)?.image ?:)
 
         }
     }
