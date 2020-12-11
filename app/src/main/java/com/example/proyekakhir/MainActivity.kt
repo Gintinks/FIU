@@ -3,8 +3,6 @@ package com.example.proyekakhir
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -69,7 +67,10 @@ class MainActivity : AppCompatActivity() {
         val list = findViewById<RecyclerView>(R.id.lv_movie)
         initData()
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = TodoAdapter(this, movies)
+        list.adapter = MovieAdapter(this, movies){
+            val toast = Toast.makeText(applicationContext, it.nama_movie, Toast.LENGTH_SHORT)
+            toast.show()
+        }
 
         Log.i("MainActivity", "onResume()")
     }
@@ -81,6 +82,5 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("MainActivity", "onDestroy()")
     }
-
 
 }

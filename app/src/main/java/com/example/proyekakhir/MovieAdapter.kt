@@ -1,17 +1,15 @@
 package com.example.proyekakhir
 
-import android.content.ClipData
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class TodoAdapter(val context: Context, val movies: List<movie2>) :
-    RecyclerView.Adapter<TodoAdapter.ViewHolder>(){
+class MovieAdapter(val context: Context, val movies: List<movie2>, val listener: (movie2) -> Unit) :
+    RecyclerView.Adapter<MovieAdapter.ViewHolder>(){
     //RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     inner class TodoViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView)
@@ -31,7 +29,7 @@ class TodoAdapter(val context: Context, val movies: List<movie2>) :
 ////            todos.value?.get(position)?.image?.let { poster.setImageResource(it.toInt()) }
 //
 //        }
-        holder.bindItem(movies[position])
+        holder.bindItem(movies[position], listener)
     }
 
     override fun getItemCount(): Int = movies.size
@@ -41,11 +39,13 @@ class TodoAdapter(val context: Context, val movies: List<movie2>) :
         val date = view.findViewById<TextView>(R.id.tv_release_date)
         val synopsis = view.findViewById<TextView>(R.id.tv_synopsis)
         val poster = view.findViewById<ImageView>(R.id.iv_poster)
-        fun bindItem(items: movie2){
-            nama_movie.text = items.nama_movie
-            date.text = items.release_date
-            synopsis.text = items.sinopsis_movie
+        fun bindItem(movies: movie2, listener: (movie2) -> Unit){
+            nama_movie.text = movies.nama_movie
+            date.text = movies.release_date
+            synopsis.text = movies.sinopsis_movie
             //itemView.setOnClickListener{ listener(items)}
+            itemView.setOnClickListener{ listener(movies)}
         }
     }
 }
+
