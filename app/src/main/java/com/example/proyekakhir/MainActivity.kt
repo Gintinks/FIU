@@ -11,22 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    val ratingArray: Array<String> = resources.getStringArray(R.array.movie_rating)
-    val posterArray: Array<String> = resources.getStringArray(R.array.movie_poster)
-    val nameArray: Array<String> = resources.getStringArray(R.array.movie_title)
-    val synopsisArray: Array<String> = resources.getStringArray(R.array.movie_synopsis)
-    val dateArray: Array<String> = resources.getStringArray(R.array.movie_release_date)
+   // val ratingArray: Array<String> = resources.getStringArray(R.array.movie_rating)
+////    val posterArray: Array<Int> = resources.getDrawable(R.array.movie_poster)
+//    val nameArray: Array<String> = resources.getStringArray(R.array.movie_title)
+//    val synopsisArray: Array<String> = resources.getStringArray(R.array.movie_synopsis)
+//    val dateArray: Array<String> = resources.getStringArray(R.array.movie_release_date)
 
     lateinit var tv_hello: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("MainActivity", "onStart()")
-        setContentView(R.layout.activity_movie_list)
-        val todoVM = TodoViewMovie(MovieRepository(ratingArray,posterArray,nameArray,synopsisArray, dateArray))
-        val adapter = TodoAdapter(todoVM.getTodos())
-        val rvTodo = findViewById<RecyclerView>(R.id.lv_movie)
-        rvTodo.adapter = adapter
-        rvTodo.layoutManager = LinearLayoutManager(this)
 
 //        val movie_Comment_Repo = MovieCommentRepo()
 //        val movieCommentViewModel = MovieCommentViewModel(movie_Comment_Repo)
@@ -57,7 +50,15 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume(){
         super.onResume()
-        setContentView(R.layout.activity_main)
+
+        setContentView(R.layout.activity_movie_list)
+
+        Log.i("MainActivity", "onStart()")
+        val todoVM = TodoViewMovie(MovieRepository())
+        val adapter = TodoAdapter(todoVM.getTodos())
+        val rvTodo = findViewById<RecyclerView>(R.id.lv_movie)
+        rvTodo.adapter = adapter
+        rvTodo.layoutManager = LinearLayoutManager(this)
 
         Log.i("MainActivity", "onResume()")
     }
