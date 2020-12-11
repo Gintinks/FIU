@@ -1,8 +1,5 @@
 package com.example.proyekakhir
 
-import android.media.Image
-import android.media.ImageReader
-import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +25,7 @@ class TodoAdapter(var todos: LiveData<List<movie2>>) :
             nama_movie.text = todos.value?.get(position)?.nama_movie ?: ""
             date.text = todos.value?.get(position)?.release_date ?: ""
             synopsis.text = todos.value?.get(position)?.sinopsis_movie ?: ""
-            poster.setImageDrawable(todos.value?.get(position)?.image ?:)
+//            todos.value?.get(position)?.image?.let { poster.setImageResource(it.toInt()) }
 
         }
     }
