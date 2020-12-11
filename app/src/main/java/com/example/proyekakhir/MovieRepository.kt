@@ -10,7 +10,7 @@ class MovieRepository(
 //            listOfTodos.add(movie2(i, nameArray.get(i),dateArray.get(i),synopsisArray.get(i) ,
 //                Integer.parseInt(ratingArray.get(i)), posterArray.get(i)))
 //        }
-        listOfTodos.add(movie2(1,"Test","12525","test",69))
+        listOfTodos.add(movie2(1,"Test","12525","test","69"))
     }
 
     fun addTodos(newMovie: movie2) {
