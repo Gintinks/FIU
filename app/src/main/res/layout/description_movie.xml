@@ -34,8 +34,8 @@
         android:layout_width="413dp"
         android:layout_height="149dp"
         android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:lineSpacingMultiplier="1"
         android:textColor="@android:color/black"
@@ -108,5 +108,15 @@
         app:layout_constraintStart_toEndOf="@+id/tv_rating"
         app:layout_constraintTop_toBottomOf="@id/tv_release_date"
         app:layout_constraintVertical_bias="0.0" />
+    <FrameLayout
+        android:id="@+id/fragment_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.description_movie.*
 import android.content.Intent
+import android.widget.Button
 
 class MovieDescription : AppCompatActivity() {
 
@@ -23,6 +24,13 @@ class MovieDescription : AppCompatActivity() {
         tv_release_date.setText(release_date.toString())
         tv_rating.setText(rating.toString())
         tv_synopsis.setText(sinopsis_movie.toString())
+        val fragComments = FragComment()
+        findViewById<Button>(R.id.button). setOnClickListener {
+            supportFragmentManager. beginTransaction().apply {
+                replace(R.id.fragment_comment, fragComments)
+                commit()
+            }
+        }
     }
     override fun onPause() {
         super.onPause()
