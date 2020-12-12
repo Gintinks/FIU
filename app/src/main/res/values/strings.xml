@@ -12,7 +12,7 @@
 
 
 
-    <array name="movie_poster">
+    <integer-array name="movie_poster">
         <item>@drawable/poster_aquaman</item>
         <item>@drawable/poster_avengerinfinity</item>
         <item>@drawable/poster_birdbox</item>
@@ -23,7 +23,7 @@
         <item>@drawable/poster_robinhood</item>
         <item>@drawable/poster_spiderman</item>
         <item>@drawable/poster_venom</item>
-    </array>
+    </integer-array>
 
     <string-array name="movie_title">
         <item>Aquaman</item>
@@ -76,4 +76,5 @@
         <item>84</item>
         <item>66</item>
     </string-array>
+
 </resources>

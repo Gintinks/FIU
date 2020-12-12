@@ -1,14 +1,12 @@
 package com.example.proyekakhir
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.description_movie.*
 
 class MainActivity : AppCompatActivity() {
     var movies: MutableList<movie2> = mutableListOf()
@@ -18,9 +16,21 @@ class MainActivity : AppCompatActivity() {
         val nameArray = resources.getStringArray(R.array.movie_title)
         val synopsisArray = resources.getStringArray(R.array.movie_synopsis)
         val dateArray = resources.getStringArray(R.array.movie_release_date)
+        val imageArray = resources.obtainTypedArray(R.array.movie_poster)
+//        val drawableIds = IntArray(imageArray.length())
+//        val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.poster_mortalengine, null)
+//        for (i in 0 until imageArray.length()) {
+//            drawableIds[i] = imageArray.getResourceId(i, 0)
+//        }
+//        imageArray.recycle();
+        val myImageList = intArrayOf(R.drawable.poster_aquaman,R.drawable.poster_avengerinfinity,R.drawable.poster_birdbox,
+            R.drawable.poster_bumblebee,R.drawable.poster_dragon,R.drawable.poster_glass,R.drawable.poster_mortalengine,R.drawable.poster_robinhood
+        ,R.drawable.poster_spiderman,R.drawable.poster_venom)
         movies.clear()
+
         for(i in ratingArray.indices){
-            movies.add(movie2(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i]))
+
+            movies.add(movie2(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i],myImageList[i]))
         }
     }
 
@@ -69,6 +79,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("release_date", it.release_date)
             intent.putExtra("rating", it.rating)
             intent.putExtra("sinopsis_movie", it.sinopsis_movie)
+            intent.putExtra("poster",it.poster)
             startActivity(intent)
         }
 

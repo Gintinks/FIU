@@ -7,53 +7,52 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="413dp"
+        android:layout_height="425dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:ems="15"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf=" @id/et_comment_movie"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/comment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_comment_movie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        android:ems="15"
-        android:hint="Comment Here"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <EditText
+            android:id="@+id/et_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="642dp" />
 
-    <Button
-        android:id="@+id/btn_tambah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tambah"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/et_comment_movie" />
+        <Button
+            android:id="@+id/btn_tambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tambah"
+            tools:layout_editor_absoluteY="683dp" />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="237dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_nama"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/et_comment_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="Comment Here"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="686dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="237dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="471dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,6 +43,7 @@ class MovieAdapter(val context: Context, val movies: List<movie2>, val listener:
             nama_movie.text = movies.nama_movie
             date.text = movies.release_date
             synopsis.text = movies.sinopsis_movie
+            poster.setImageResource(movies.poster)
             //itemView.setOnClickListener{ listener(items)}
             itemView.setOnClickListener{ listener(movies)}
         }
