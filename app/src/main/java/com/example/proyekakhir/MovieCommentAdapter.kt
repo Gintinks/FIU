@@ -22,8 +22,8 @@ class MovieCommentAdapter(val MovieComments: LiveData<List<MovieCommentModel>>) 
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         holder.itemView.apply{
-            val commentMovie = findViewById<TextView>(R.id.NamaMahasiswa)
-            val nama = findViewById<TextView>(R.id.nimMahasiswa)
+            val commentMovie = findViewById<TextView>(R.id.namaComenter)
+            val nama = findViewById<TextView>(R.id.isiComment)
 
             nama.text = MovieComments.value?.get(position)?.nama_movie_comment ?: ""
             commentMovie.text = MovieComments.value?.get(position)?.movie_comment ?: ""
