@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.description_movie.*
 
 class MainActivity : AppCompatActivity() {
     var movies: MutableList<movie2> = mutableListOf()
@@ -68,6 +69,11 @@ class MainActivity : AppCompatActivity() {
         initData()
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = MovieAdapter(this, movies){
+            setContentView(R.layout.description_movie)
+            tv_title.setText(it.nama_movie)
+            tv_release_date.setText(it.release_date)
+            tv_rating.setText(it.rating)
+            tv_synopsis.setText(it.sinopsis_movie)
             val toast = Toast.makeText(applicationContext, it.nama_movie, Toast.LENGTH_SHORT)
             toast.show()
         }
