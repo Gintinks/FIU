@@ -1,5 +1,6 @@
 package com.example.proyekakhir
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -62,12 +63,13 @@ class MainActivity : AppCompatActivity() {
         initData()
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = MovieAdapter(this, movies){
-            MovieDescription()
-            setContentView(R.layout.description_movie)
-            tv_title.setText(it.nama_movie)
-            tv_release_date.setText(it.release_date)
-            tv_rating.setText(it.rating)
-            tv_synopsis.setText(it.sinopsis_movie)
+            intent = Intent(this, MovieDescription::class.java)
+            intent.putExtra("id", it.id)
+            intent.putExtra("nama_movie", it.nama_movie)
+            intent.putExtra("release_date", it.release_date)
+            intent.putExtra("rating", it.rating)
+            intent.putExtra("sinopsis_movie", it.sinopsis_movie)
+            startActivity(intent)
         }
 
         Log.i("MainActivity", "onResume()")
