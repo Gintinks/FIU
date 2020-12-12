@@ -31,8 +31,10 @@
 
     <TextView
         android:id="@+id/tv_synopsis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="413dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:lineSpacingMultiplier="1"
         android:textColor="@android:color/black"

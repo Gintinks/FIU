@@ -56,26 +56,18 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume(){
         super.onResume()
-
         setContentView(R.layout.activity_movie_list)
-
         Log.i("MainActivity", "onStart()")
-        //val todoVM = TodoViewMovie(MovieRepository())
-        //val adapter = TodoAdapter(todoVM.getTodos())
-        //val rvTodo = findViewById<RecyclerView>(R.id.lv_movie)
-        //rvTodo.adapter = adapter
-        //rvTodo.layoutManager = LinearLayoutManager(this)
         val list = findViewById<RecyclerView>(R.id.lv_movie)
         initData()
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = MovieAdapter(this, movies){
+            MovieDescription()
             setContentView(R.layout.description_movie)
             tv_title.setText(it.nama_movie)
             tv_release_date.setText(it.release_date)
             tv_rating.setText(it.rating)
             tv_synopsis.setText(it.sinopsis_movie)
-            val toast = Toast.makeText(applicationContext, it.nama_movie, Toast.LENGTH_SHORT)
-            toast.show()
         }
 
         Log.i("MainActivity", "onResume()")
