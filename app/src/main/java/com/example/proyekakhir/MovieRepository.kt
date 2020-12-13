@@ -1,21 +1,29 @@
 package com.example.proyekakhir
 
-class MovieRepository(
-    ) {
+class MovieRepository(mainActivity: MainActivity) {
+    private var movies = mutableListOf<movie2>()
 
-    private val listOfTodos = mutableListOf<movie2>()
+    fun getMovies() = movies
+
+    fun addMovies(newMovie: movie2) {
+        movies.add(newMovie)
+    }
+
+
     init {
-//        for (i in 0..ratingArray.size-1) {
-//            // body of loop\
-//            listOfTodos.add(movie2(i, nameArray.get(i),dateArray.get(i),synopsisArray.get(i) ,
-//                Integer.parseInt(ratingArray.get(i)), posterArray.get(i)))
-//        }
+        val ratingArray = mainActivity.resources.getStringArray(R.array.movie_rating)
+        val nameArray = mainActivity.resources.getStringArray(R.array.movie_title)
+        val synopsisArray = mainActivity.resources.getStringArray(R.array.movie_synopsis)
+        val dateArray = mainActivity.resources.getStringArray(R.array.movie_release_date)
+        val imageArray = mainActivity.resources.obtainTypedArray(R.array.movie_poster)
+        val myImageList = intArrayOf(R.drawable.poster_aquaman,R.drawable.poster_avengerinfinity,R.drawable.poster_birdbox,
+            R.drawable.poster_bumblebee,R.drawable.poster_dragon,R.drawable.poster_glass,R.drawable.poster_mortalengine,R.drawable.poster_robinhood
+            ,R.drawable.poster_spiderman,R.drawable.poster_venom)
+        movies.clear()
 
+        for(i in ratingArray.indices){
+            movies.add(movie2(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i],myImageList[i]))
+        }
     }
 
-    fun addTodos(newMovie: movie2) {
-        listOfTodos.add(newMovie)
-    }
-
-    fun getTodos() = listOfTodos
 }

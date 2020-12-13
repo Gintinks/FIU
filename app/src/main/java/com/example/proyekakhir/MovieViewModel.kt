@@ -5,15 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MovieViewModel(val movieRepo: MovieRepository): ViewModel() {
-
-    var listOfTodos = MutableLiveData<List<movie2>>()
-
-    fun getTodos(): LiveData<List<movie2>> {
-        listOfTodos.value = movieRepo.getTodos()
-        return listOfTodos
+    var movies = MutableLiveData<List<movie2>>()
+    fun getMovie(): LiveData<List<movie2>>{
+        movies.value = movieRepo.getMovies()
+        return movies
     }
-    fun addTodos(newMahasiswa : movie2){
-        movieRepo.addTodos(newMahasiswa)
-        listOfTodos.value = movieRepo.getTodos()
+    fun addMovies (newMovie: movie2){
+        movieRepo.addMovies(newMovie)
+        movies.value = movieRepo.getMovies()
     }
 }
