@@ -4,16 +4,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MovieCommentViewModel (val movieRepo: MovieCommentRepo): ViewModel() {
+class MovieCommentViewModel (val mahasiswaRepo: MovieCommentRepo): ViewModel() {
     var movieComments = MutableLiveData<List<MovieCommentModel>>()
 
     fun getmovieComments(): LiveData<List<MovieCommentModel>> {
-        movieComments.value = movieRepo.getmovieCommentList()
+        movieComments.value = mahasiswaRepo.getmovieCommentList()
         return movieComments
     }
 
     fun tambahMovieComments(newMovieCommente : MovieCommentModel){
-        movieRepo.tambahMovieComment(newMovieCommente)
-        movieComments.value = movieRepo.getmovieCommentList()
+        mahasiswaRepo.tambahMovieComment(newMovieCommente)
+        movieComments.value = mahasiswaRepo.getmovieCommentList()
     }
 }

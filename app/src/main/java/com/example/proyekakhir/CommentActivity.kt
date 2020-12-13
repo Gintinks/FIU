@@ -51,10 +51,11 @@ class CommentActivity : AppCompatActivity(){
             list.layoutManager = LinearLayoutManager(this)
             Toast.makeText(applicationContext, """$rating $Nrating""".trimIndent(), Toast.LENGTH_LONG).show()
         }
-        val etNamaRestore = sharedPreferences.getString(KEY_NAMA, "0")
-        val etCommentRestore = sharedPreferences.getString(KEY_COMMENT, "0")
+        val etNamaRestore = sharedPreferences.getString(KEY_NAMA, "")
+        val etCommentRestore = sharedPreferences.getString(KEY_COMMENT, "")
         et_nama.setText(etNamaRestore)
         et_comment_movie.setText(etCommentRestore)
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
