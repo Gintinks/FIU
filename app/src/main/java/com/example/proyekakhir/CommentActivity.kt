@@ -23,17 +23,19 @@ class CommentActivity : AppCompatActivity(){
         setContentView(R.layout.movie_comment)
         val bundle: Bundle? = intent.extras
         val id = bundle?.get("id")
-        var rating = bundle?.get("ratingDes") as Int
+        var rating = bundle?.get("ratingDes").toString().toInt()
+
         initData(id as String)
         val list = findViewById<RecyclerView>(R.id.rv_main)
             list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
             list.layoutManager = LinearLayoutManager(this)
+
         val simpleRatingBar = findViewById<View>(R.id.ratingBar) as RatingBar
 
         findViewById<Button>(R.id.btn_tambah). setOnClickListener {
-            val countRating = ((rating * totalRating) + simpleRatingBar.rating*20)/(totalRating+1)
-            rating = countRating.toInt()
-            tv_rating.setText(rating.toString())
+//            val countRating = ((rating * totalRating) + simpleRatingBar.rating*20)/(totalRating+1)
+//             rating = countRating.toInt()
+//            tv_rating.setText(rating.toString())
             comments.add(MovieCommentModel(id, R.id.et_nama.toString(), R.id.et_comment_movie.toString()))
         }
     }
