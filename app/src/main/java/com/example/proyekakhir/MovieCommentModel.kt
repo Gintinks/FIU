@@ -1,4 +1,4 @@
 package com.example.proyekakhir
 
-class MovieCommentModel (val movie_comment: String, val nama_movie_comment: String) {
+class MovieCommentModel (val id_movie: Int, val id_comment: Int, val nama: String, val comment: String) {
 }
