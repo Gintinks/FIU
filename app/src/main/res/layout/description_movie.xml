@@ -82,6 +82,7 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -108,15 +109,16 @@
         app:layout_constraintStart_toEndOf="@+id/tv_rating"
         app:layout_constraintTop_toBottomOf="@id/tv_release_date"
         app:layout_constraintVertical_bias="0.0" />
+
     <FrameLayout
         android:id="@+id/fragment_comment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

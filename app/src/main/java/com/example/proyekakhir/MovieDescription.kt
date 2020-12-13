@@ -29,13 +29,13 @@ class MovieDescription : AppCompatActivity() {
         tv_synopsis.setText(sinopsis_movie.toString())
         iv_poster.setImageResource(poster.hashCode())
 
-//        val fragComments = FragComment()
-//        findViewById<Button>(R.id.button). setOnClickListener {
-//            supportFragmentManager. beginTransaction().apply {
-//                replace(R.id.fragment_comment, fragComments)
-//                commit()
-//            }
-//        }
+        val fragComments = FragComment()
+        findViewById<Button>(R.id.button). setOnClickListener {
+            supportFragmentManager. beginTransaction().apply {
+                replace(R.id.fragment_comment, fragComments)
+                commit()
+            }
+        }
     }
     override fun onPause() {
         super.onPause()

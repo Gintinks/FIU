@@ -1,34 +1,38 @@
 package com.example.proyekakhir
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieCommentAdapter(val MovieComments: LiveData<List<MovieCommentModel>>) :
-    RecyclerView.Adapter<MovieCommentAdapter.MovieViewHolder>() {
-    inner class MovieViewHolder(items: View) : RecyclerView.ViewHolder(items)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context).inflate(R.layout.row_movie_comment,parent,false)
-        return MovieViewHolder(layoutInflater)
+class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentModel>, val listener: (MovieCommentModel) -> Unit) :
+    RecyclerView.Adapter<MovieCommentAdapter.ViewHolder>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCommentAdapter.ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_movie_comment,parent, false)
+        return MovieCommentAdapter.ViewHolder(view)
     }
-
-    override fun getItemCount(): Int {
-        return MovieComments.value?.size ?: 0
+    override fun onBindViewHolder(holder: MovieCommentAdapter.ViewHolder, position: Int) {
+        holder.bindItem(comments[position], listener)
     }
-
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.itemView.apply{
-            val commentMovie = findViewById<TextView>(R.id.namaComenter)
-            val nama = findViewById<TextView>(R.id.isiComment)
-
-            nama.text = MovieComments.value?.get(position)?.nama_movie_comment ?: ""
-            commentMovie.text = MovieComments.value?.get(position)?.movie_comment ?: ""
-
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
+//        private val nama_movie = view.findViewById<TextView>(R.id.tv_title)
+//        val date = view.findViewById<TextView>(R.id.tv_release_date)
+//        val synopsis = view.findViewById<TextView>(R.id.tv_synopsis)
+//        val poster = view.findViewById<ImageView>(R.id.iv_poster)
+        fun bindItem(comments: MovieCommentModel, listener: (MovieCommentModel) -> Unit){
+//            nama_movie.text = movies.nama_movie
+//            date.text = movies.release_date
+//            synopsis.text = movies.sinopsis_movie
+//            poster.setImageResource(movies.poster)
+//            //itemView.setOnClickListener{ listener(items)}
+//            itemView.setOnClickListener{ listener(movies)
+            }
         }
-    }
 
+    override fun getItemCount(): Int = comments.size
 }
+
