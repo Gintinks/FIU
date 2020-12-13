@@ -5,18 +5,17 @@
     android:layout_height="wrap_content"
     android:padding="16dp">
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/container_iv_poster"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:elevation="10dp"
-        app:cardCornerRadius="10dp" >
+        app:cardCornerRadius="10dp">
 
         <ImageView
             android:id="@+id/iv_poster"
-            android:layout_width="102dp"
-            android:layout_height="152dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop" />
     </androidx.cardview.widget.CardView>
 
