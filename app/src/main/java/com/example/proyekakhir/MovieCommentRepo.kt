@@ -12,7 +12,6 @@ class MovieCommentRepo(
         val nama = commentActivity.resources.getStringArray(R.array.nama)
         val comment = commentActivity.resources.getStringArray(R.array.comment)
 
-        // val rating = resources.getStringArray(R.array.c_rating)
         var totalRating = totalRating
         movieCommentList.clear()
         for(i in id_comment.indices){

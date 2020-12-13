@@ -31,18 +31,6 @@ class MovieCommentAdapter(val context: Context, val comments:  LiveData<List<Mov
         holder.itemView.setOnClickListener{ listener(comments.value?.get(position)?: return@setOnClickListener) }
 
     }
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-
-        val nama = view.findViewById<TextView>(R.id.namaComenter)
-        val comment = view.findViewById<TextView>(R.id.isiComment)
-        fun bindItem(comments: MovieCommentModel,id: String, listener: (MovieCommentModel) -> Unit){
-
-            if(comments.id_movie==id){
-            nama.text = comments.nama
-            comment.text = comments.comment
-            itemView.setOnClickListener{ listener(comments)}}
-        }
-    }
 
     override fun getItemCount(): Int {
         return comments.value?.size ?: 0

@@ -10,30 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
-//    fun initData(){
-//        val ratingArray = resources.getStringArray(R.array.movie_rating)
-////    val posterArray: Array<Int> = resources.getStringArray(R.array.movie_poster)
-//        val nameArray = resources.getStringArray(R.array.movie_title)
-//        val synopsisArray = resources.getStringArray(R.array.movie_synopsis)
-//        val dateArray = resources.getStringArray(R.array.movie_release_date)
-//        val imageArray = resources.obtainTypedArray(R.array.movie_poster)
-////        val drawableIds = IntArray(imageArray.length())
-////        val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.poster_mortalengine, null)
-////        for (i in 0 until imageArray.length()) {
-////            drawableIds[i] = imageArray.getResourceId(i, 0)
-////        }
-////        imageArray.recycle();
-//        val myImageList = intArrayOf(R.drawable.poster_aquaman,R.drawable.poster_avengerinfinity,R.drawable.poster_birdbox,
-//            R.drawable.poster_bumblebee,R.drawable.poster_dragon,R.drawable.poster_glass,R.drawable.poster_mortalengine,R.drawable.poster_robinhood
-//        ,R.drawable.poster_spiderman,R.drawable.poster_venom)
-//        movies.clear()
-//
-//        for(i in ratingArray.indices){
-//
-//            movies.add(movie2(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i],myImageList[i]))
-//        }
-//    }
-
     lateinit var tv_hello: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

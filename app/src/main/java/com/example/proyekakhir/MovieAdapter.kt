@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MovieAdapter(val context: Context, val movies: LiveData<List<MovieModel>>, val listener: (MovieModel) -> Unit) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
-    //RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
+
     inner class MovieViewHolder(items: View): RecyclerView.ViewHolder(items)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
