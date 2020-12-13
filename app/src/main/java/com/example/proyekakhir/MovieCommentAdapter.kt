@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentModel>, val listener: (MovieCommentModel) -> Unit) :
+class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentModel>,val id:String, val listener: (MovieCommentModel) -> Unit) :
     RecyclerView.Adapter<MovieCommentAdapter.ViewHolder>(){
     inner class TodoViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCommentAdapter.ViewHolder {
@@ -18,7 +18,8 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
 
     }
     override fun onBindViewHolder(holder: MovieCommentAdapter.ViewHolder, position: Int) {
-        holder.bindItem(comments[position], listener)
+        holder.bindItem(comments[position],id, listener)
+
     }
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 //        private val nama_movie = view.findViewById<TextView>(R.id.tv_title)
@@ -27,16 +28,18 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
 //        val poster = view.findViewById<ImageView>(R.id.iv_poster)
         val nama = view.findViewById<TextView>(R.id.namaComenter)
         val comment = view.findViewById<TextView>(R.id.isiComment)
-        fun bindItem(comments: MovieCommentModel, listener: (MovieCommentModel) -> Unit){
+        fun bindItem(comments: MovieCommentModel,id: String, listener: (MovieCommentModel) -> Unit){
 //            nama_movie.text = movies.nama_movie
 //            date.text = movies.release_date
 //            synopsis.text = movies.sinopsis_movie
 //            poster.setImageResource(movies.poster)
 //            //itemView.setOnClickListener{ listener(items)}
 //            itemView.setOnClickListener{ listener(movies)
+
+            if(comments.id_movie==id){
             nama.text = comments.nama
             comment.text = comments.comment
-            itemView.setOnClickListener{ listener(comments)}
+            itemView.setOnClickListener{ listener(comments)}}
         }
     }
 

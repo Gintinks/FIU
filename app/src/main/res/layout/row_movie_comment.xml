@@ -27,8 +27,8 @@
 
     <TextView
         android:id="@+id/isiComment"
-        android:layout_width="315dp"
-        android:layout_height="522dp"
+        android:layout_width="333dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:text="Comment"

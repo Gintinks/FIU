@@ -36,7 +36,7 @@ class MovieDescription : AppCompatActivity() {
 //                commit()
 //            }
             intent = Intent(this, CommentActivity::class.java)
-            //intent.putExtra("id", id.toString())
+            intent.putExtra("id", id.toString())
             startActivity(intent)
         }
     }

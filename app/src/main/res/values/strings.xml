@@ -80,15 +80,24 @@
         <item>1</item>
         <item>1</item>
         <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
     </string-array>
     <string-array name="nama">
         <item>yudi</item>
         <item>benbooz</item>
         <item>yuli</item>
+        <item>William</item>
+        <item>Lyle Walt</item>
+        <item>Lawrence</item>
     </string-array>
     <string-array name="comment">
         <item>Film nya Jelek Anjing</item>
         <item>Mantap</item>
         <item>Filmnya bikin sange</item>
+        <item>idk lul</item>
+        <item>Dunno</item>
+        <item>eh, throw me a bone</item>
     </string-array>
 </resources>
