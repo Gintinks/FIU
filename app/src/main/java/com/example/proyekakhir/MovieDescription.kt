@@ -31,10 +31,13 @@ class MovieDescription : AppCompatActivity() {
 
         val fragComments = FragComment()
         findViewById<Button>(R.id.button). setOnClickListener {
-            supportFragmentManager. beginTransaction().apply {
-                replace(R.id.fragment_comment, fragComments)
-                commit()
-            }
+//            supportFragmentManager. beginTransaction().apply {
+//                replace(R.id.fragment_comment, fragComments)
+//                commit()
+//            }
+            intent = Intent(this, CommentActivity::class.java)
+            intent.putExtra("id", id.toString())
+            startActivity(intent)
         }
     }
     override fun onPause() {

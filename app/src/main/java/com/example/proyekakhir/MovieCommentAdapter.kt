@@ -14,6 +14,7 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCommentAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_movie_comment,parent, false)
         return MovieCommentAdapter.ViewHolder(view)
+
     }
     override fun onBindViewHolder(holder: MovieCommentAdapter.ViewHolder, position: Int) {
         holder.bindItem(comments[position], listener)
@@ -23,6 +24,8 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
 //        val date = view.findViewById<TextView>(R.id.tv_release_date)
 //        val synopsis = view.findViewById<TextView>(R.id.tv_synopsis)
 //        val poster = view.findViewById<ImageView>(R.id.iv_poster)
+        val nama = view.findViewById<TextView>(R.id.namaComenter)
+        val comment = view.findViewById<TextView>(R.id.isiComment)
         fun bindItem(comments: MovieCommentModel, listener: (MovieCommentModel) -> Unit){
 //            nama_movie.text = movies.nama_movie
 //            date.text = movies.release_date
@@ -30,8 +33,11 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
 //            poster.setImageResource(movies.poster)
 //            //itemView.setOnClickListener{ listener(items)}
 //            itemView.setOnClickListener{ listener(movies)
-            }
+                nama.text = comments.nama
+                comment.text = comments.comment
+
         }
+    }
 
     override fun getItemCount(): Int = comments.size
 }
