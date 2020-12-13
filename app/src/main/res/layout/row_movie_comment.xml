@@ -29,12 +29,14 @@
         android:id="@+id/isiComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:text="Comment"
         android:textSize="15dp"
-        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/listIcon"
-        app:layout_constraintTop_toBottomOf="@+id/nimMahasiswa"
- />
+        app:layout_constraintTop_toBottomOf="@+id/namaComenter"
+        app:layout_constraintVertical_bias="0.428" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
