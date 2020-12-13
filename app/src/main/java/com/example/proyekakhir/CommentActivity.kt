@@ -1,20 +1,14 @@
 package com.example.proyekakhir
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.description_movie.*
-import kotlinx.android.synthetic.main.movie_comment.*
-import kotlinx.android.synthetic.main.row_movie_comment.*
 
 
 class CommentActivity : AppCompatActivity(){
@@ -25,9 +19,9 @@ class CommentActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.movie_comment)
         val bundle: Bundle? = intent.extras
-        val id = bundle?.get("id")
+        val id = bundle?.get("id").toString()
         var rating = bundle?.get("ratingDes").toString().toInt()
-
+        val commentRepo = MovieCommentRepo(this, id, totalRating)
         initData(id as String)
         val list = findViewById<RecyclerView>(R.id.rv_main)
             list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
