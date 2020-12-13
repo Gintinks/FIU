@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.row_movie_comment.*
 
 class CommentActivity : AppCompatActivity(){
     var comments : MutableList<MovieCommentModel> = mutableListOf()
+
     var totalRating = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,9 +54,6 @@ class CommentActivity : AppCompatActivity(){
         val id_comment = resources.getStringArray(R.array.id_movie)
         val nama = resources.getStringArray(R.array.nama)
         val comment = resources.getStringArray(R.array.comment)
-
-       // val rating = resources.getStringArray(R.array.c_rating)
-
         comments.clear()
         for(i in id_comment.indices){
             if(id_comment[i]==id) {
