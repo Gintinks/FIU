@@ -29,14 +29,14 @@ class MovieDescription : AppCompatActivity() {
         tv_synopsis.setText(sinopsis_movie.toString())
         iv_poster.setImageResource(poster.hashCode())
 
-        val fragComments = FragComment()
+        //val fragComments = FragComment()
         findViewById<Button>(R.id.button). setOnClickListener {
 //            supportFragmentManager. beginTransaction().apply {
 //                replace(R.id.fragment_comment, fragComments)
 //                commit()
 //            }
             intent = Intent(this, CommentActivity::class.java)
-            intent.putExtra("id", id.toString())
+            //intent.putExtra("id", id.toString())
             startActivity(intent)
         }
     }
