@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.RatingBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
@@ -36,7 +37,9 @@ class CommentActivity : AppCompatActivity(){
 //            val countRating = ((rating * totalRating) + simpleRatingBar.rating*20)/(totalRating+1)
 //             rating = countRating.toInt()
 //            tv_rating.setText(rating.toString())
-            comments.add(MovieCommentModel(id, R.id.et_nama.toString(), R.id.et_comment_movie.toString()))
+            var nama: String = findViewById<EditText>(R.id.et_nama).text.toString()
+            var coment: String = findViewById<EditText>(R.id.et_comment_movie).text.toString()
+            comments.add(MovieCommentModel(id, nama, coment))
             list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
             list.layoutManager = LinearLayoutManager(this)
         }
