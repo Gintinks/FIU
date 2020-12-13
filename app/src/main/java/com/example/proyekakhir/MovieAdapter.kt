@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieAdapter(val context: Context, val movies: LiveData<List<movie2>>, val listener: (movie2) -> Unit) :
+class MovieAdapter(val context: Context, val movies: LiveData<List<MovieModel>>, val listener: (MovieModel) -> Unit) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
     //RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
     inner class MovieViewHolder(items: View): RecyclerView.ViewHolder(items)

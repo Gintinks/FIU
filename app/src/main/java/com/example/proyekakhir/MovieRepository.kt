@@ -1,11 +1,11 @@
 package com.example.proyekakhir
 
 class MovieRepository(mainActivity: MainActivity) {
-    private var movies = mutableListOf<movie2>()
+    private var movies = mutableListOf<MovieModel>()
 
     fun getMovies() = movies
 
-    fun addMovies(newMovie: movie2) {
+    fun addMovies(newMovie: MovieModel) {
         movies.add(newMovie)
     }
 
@@ -22,7 +22,7 @@ class MovieRepository(mainActivity: MainActivity) {
         movies.clear()
 
         for(i in ratingArray.indices){
-            movies.add(movie2(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i],myImageList[i]))
+            movies.add(MovieModel(i, nameArray[i], dateArray[i], synopsisArray[i], ratingArray[i],myImageList[i]))
         }
     }
 
