@@ -37,6 +37,8 @@ class CommentActivity : AppCompatActivity(){
 //             rating = countRating.toInt()
 //            tv_rating.setText(rating.toString())
             comments.add(MovieCommentModel(id, R.id.et_nama.toString(), R.id.et_comment_movie.toString()))
+            list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
+            list.layoutManager = LinearLayoutManager(this)
         }
     }
 
