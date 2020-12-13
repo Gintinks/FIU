@@ -76,6 +76,7 @@
         <item>84</item>
         <item>66</item>
     </string-array>
+
     <string-array name="id_movie">
         <item>1</item>
         <item>1</item>
@@ -84,6 +85,7 @@
         <item>1</item>
         <item>1</item>
     </string-array>
+
     <string-array name="nama">
         <item>yudi</item>
         <item>benbooz</item>
@@ -92,6 +94,7 @@
         <item>Lyle Walt</item>
         <item>Lawrence</item>
     </string-array>
+
     <string-array name="comment">
         <item>Film nya Jelek Anjing</item>
         <item>Mantap</item>
@@ -99,5 +102,14 @@
         <item>idk lul</item>
         <item>Dunno</item>
         <item>eh, throw me a bone</item>
+    </string-array>
+
+    <string-array name="c_rating">
+        <item>50</item>
+        <item>60</item>
+        <item>100</item>
+        <item>40</item>
+        <item>70</item>
+        <item>50</item>
     </string-array>
 </resources>

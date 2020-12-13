@@ -5,7 +5,6 @@ class MovieCommentRepo {
 
 
     init {
-        movieCommentList.add(MovieCommentModel("1", "yudi", "filmnya kek anjing"))
     }
 
     fun getmovieCommentList() = movieCommentList
