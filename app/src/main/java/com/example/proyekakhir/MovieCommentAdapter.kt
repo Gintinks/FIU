@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentModel>, val listener: (MovieCommentModel) -> Unit) :
     RecyclerView.Adapter<MovieCommentAdapter.ViewHolder>(){
+    inner class TodoViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCommentAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_movie_comment,parent, false)
         return MovieCommentAdapter.ViewHolder(view)
@@ -33,9 +34,9 @@ class MovieCommentAdapter(val context: Context, val comments: List<MovieCommentM
 //            poster.setImageResource(movies.poster)
 //            //itemView.setOnClickListener{ listener(items)}
 //            itemView.setOnClickListener{ listener(movies)
-                nama.text = comments.nama
-                comment.text = comments.comment
-
+            nama.text = comments.nama
+            comment.text = comments.comment
+            itemView.setOnClickListener{ listener(comments)}
         }
     }
 

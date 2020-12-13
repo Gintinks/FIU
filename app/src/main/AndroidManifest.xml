@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MovieDescription" />
+        <activity android:name=".CommentActivity" />
     </application>
 
 </manifest>
