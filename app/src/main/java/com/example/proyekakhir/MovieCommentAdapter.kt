@@ -10,15 +10,15 @@ import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 
 class MovieCommentAdapter(val context: Context, val comments:  LiveData<List<MovieCommentModel>>,val id:String, val listener: (MovieCommentModel) -> Unit) :
-    RecyclerView.Adapter<MovieCommentAdapter.ViewHolder>(){
-    inner class MovieCommentViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView)
+    RecyclerView.Adapter<MovieCommentAdapter.MovieCommentViewHolder>(){
+    inner class MovieCommentViewHolder(items: View): RecyclerView.ViewHolder(items)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCommentViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context).inflate(R.layout.item_movie,parent, false)
+        val layoutInflater = LayoutInflater.from(parent.context).inflate(R.layout.row_movie_comment,parent, false)
         return MovieCommentViewHolder(layoutInflater)
 
     }
-    override fun onBindViewHolder(holder: MovieCommentAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MovieCommentViewHolder, position: Int) {
         holder.itemView.apply {
             val nama = findViewById<TextView>(R.id.namaComenter)
             val comment = findViewById<TextView>(R.id.isiComment)

@@ -27,7 +27,7 @@ class MovieCommentRepo(
 
     fun getmovieCommentList() = movieCommentList
 
-    fun tambahMovieComment(newMovieCommente: MovieCommentModel){
-        movieCommentList.add(newMovieCommente)
+    fun tambahMovieComment(newMovieComment: MovieCommentModel){
+        movieCommentList.add(newMovieComment)
     }
 }

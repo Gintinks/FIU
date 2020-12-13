@@ -22,9 +22,10 @@ class CommentActivity : AppCompatActivity(){
         val id = bundle?.get("id").toString()
         var rating = bundle?.get("ratingDes").toString().toInt()
         val commentRepo = MovieCommentRepo(this, id, totalRating)
-        initData(id as String)
+        val commentVM = MovieCommentViewModel(commentRepo)
+
         val list = findViewById<RecyclerView>(R.id.rv_main)
-            list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
+            list.adapter = MovieCommentAdapter(this, commentVM.getmovieComments(), id.toString()) {}
             list.layoutManager = LinearLayoutManager(this)
 
         val simpleRatingBar = findViewById<View>(R.id.ratingBar) as RatingBar
@@ -37,8 +38,9 @@ class CommentActivity : AppCompatActivity(){
 //            tv_rating.setText(Nrating.toString())
             var nama: String = findViewById<EditText>(R.id.et_nama).text.toString()
             var coment: String = findViewById<EditText>(R.id.et_comment_movie).text.toString()
-            comments.add(MovieCommentModel(id, nama, coment))
-            list.adapter = MovieCommentAdapter(this, comments, id.toString()) {}
+            var newComment = MovieCommentModel(id, nama, coment)
+            commentRepo.tambahMovieComment(newComment)
+            list.adapter = MovieCommentAdapter(this, commentVM.getmovieComments(), id.toString()) {}
             list.layoutManager = LinearLayoutManager(this)
             Toast.makeText(applicationContext, """$rating $Nrating""".trimIndent(), Toast.LENGTH_LONG).show()
         }
