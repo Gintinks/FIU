@@ -31,10 +31,10 @@ class CommentActivity : AppCompatActivity(){
         val commentRepo = MovieCommentRepo(this, id, totalRating)
         val commentVM = MovieCommentViewModel(commentRepo)
         val list = findViewById<RecyclerView>(R.id.rv_main)
-        list.adapter = MovieCommentAdapter(this, commentVM.getmovieComments(), id.toString()) {}
+
+        list.adapter = MovieCommentAdapter(this, commentVM.getmovieComments(), id.toString()){}
         list.layoutManager = LinearLayoutManager(this)
-        var nama: String = findViewById<EditText>(R.id.et_nama).text.toString()
-        var coment: String = findViewById<EditText>(R.id.et_comment_movie).text.toString()
+
         sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         val simpleRatingBar = findViewById<View>(R.id.ratingBar) as RatingBar
 
@@ -43,7 +43,9 @@ class CommentActivity : AppCompatActivity(){
             totalRating +=1
             val Nrating = countRating.toInt()
             rating = countRating.toInt()
-              var newComment = MovieCommentModel(id, nama, coment)
+            var nama: String = findViewById<EditText>(R.id.et_nama).text.toString()
+            var coment: String = findViewById<EditText>(R.id.et_comment_movie).text.toString()
+            val newComment = MovieCommentModel(id, nama, coment)
             commentRepo.tambahMovieComment(newComment)
             list.adapter = MovieCommentAdapter(this, commentVM.getmovieComments(), id.toString()) {}
             list.layoutManager = LinearLayoutManager(this)
