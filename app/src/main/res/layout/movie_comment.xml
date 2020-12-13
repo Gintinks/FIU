@@ -25,14 +25,14 @@
             android:id="@+id/et_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
+            android:layout_marginLeft="15dp"
             android:ems="14"
             android:hint="Name"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_tambah"
             app:layout_constraintBottom_toTopOf="@id/et_comment_movie"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            />
 
 
         <Button
@@ -50,14 +50,14 @@
             android:id="@+id/et_comment_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
+            android:layout_marginLeft="15dp"
             android:ems="14"
             android:hint="Comment Here"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_tambah"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            />
 
         <RatingBar
             android:id="@+id/ratingBar"
